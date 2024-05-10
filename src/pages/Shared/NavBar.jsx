@@ -28,7 +28,6 @@ const NavBar = () => {
                     border: isActive ? "1px solid orange" : "",
                     borderRadius: isActive ? "0px" : "",
                     color: isActive ? "white" : "",
-                    fontWeight: isActive? "bold" : ""
                 };
             }}>Home</NavLink></li>
             <li><NavLink to='/queries' style={({ isActive }) => {
