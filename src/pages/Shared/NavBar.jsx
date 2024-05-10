@@ -104,7 +104,7 @@ const NavBar = () => {
                     </div>
             
                     : <div>
-                        <Link to='/login' className="px-4 py-2 bg-[#738035] text-white hidden rounded-none lg:flex">Login</Link>
+                        <Link to='/login' className="px-4 py-2 bg-[#2c7b20] text-white hidden rounded-none lg:flex">Login</Link>
                     </div>
                 }
                 <label className="swap swap-rotate ml-4">
