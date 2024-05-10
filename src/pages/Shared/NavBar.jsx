@@ -1,12 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
-// import useAuth from "../hooks/useAuth";
 import { useEffect, useState } from "react";
 import icon from '../../../public/icons8-project-management.gif'
+import useAuth from "../../hooks/useAuth";
 
 const NavBar = () => {
-    const user = false;
-    const logOut = 'logout';
-    // const { user, logOut } = useAuth();
+    const { user, logOut } = useAuth();
     const [theme, setTheme] = useState('light');
     useEffect(() => {
         localStorage.setItem('theme', theme);

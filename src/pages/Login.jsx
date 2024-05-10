@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../public/login.svg';
+// import useAuth from '../hooks/useAuth';
+// import {toast} from "react-toastify"
 
 const Login = () => {
+   
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
@@ -9,7 +12,7 @@ const Login = () => {
                     <img src={login} alt="" />
                 </div>
                 <div className="card card-body shrink-0 lg:w-1/2 shadow-2xl bg-base-100">
-                    <form>
+                    <form onSubmit={handleLogin}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
