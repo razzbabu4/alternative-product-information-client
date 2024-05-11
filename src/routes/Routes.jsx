@@ -4,6 +4,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage";
+import MyQueries from "../pages/MyQueries";
+import AddQueries from "../pages/AddQueries";
 
 
 const router = createBrowserRouter([
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register/>
+            },
+            {
+                path: '/myQueries',
+                element: <MyQueries/>
+            },
+            {
+                path: '/addQueries',
+                element: <AddQueries/>
             },
             
         ]
