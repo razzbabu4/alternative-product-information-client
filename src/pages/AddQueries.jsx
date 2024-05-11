@@ -2,6 +2,7 @@ import useAuth from "../hooks/useAuth";
 
 const AddQueries = () => {
     const {user} = useAuth();
+    
     const handleAddQueries = e => {
         e.preventDefault();
         const form = e.target;
@@ -21,6 +22,15 @@ const AddQueries = () => {
         console.log(newQuery)
 
         // data send to server
+        fetch(`http://localhost:5000/queries`, {
+            method: 'POST',
+            headers: {'content-type':'application/json'},
+            body: JSON.stringify(newQuery)
+        })
+        .then(res=> res.json())
+        .then(data=> {
+            console.log(data)
+        })
     }
     return (
         <div className="max-w-7xl mx-auto p-4 md:p-10 rounded-md">

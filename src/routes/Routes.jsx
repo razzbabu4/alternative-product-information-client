@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage";
 import MyQueries from "../pages/MyQueries";
 import AddQueries from "../pages/AddQueries";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -16,25 +17,27 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: '/login',
-                element: <Login/>
+                element: <Login />
             },
             {
                 path: '/register',
-                element: <Register/>
+                element: <Register />
             },
             {
                 path: '/myQueries',
-                element: <MyQueries/>
+                element: <PrivateRoute>
+                    <MyQueries />
+                </PrivateRoute>
             },
             {
                 path: '/addQueries',
-                element: <AddQueries/>
+                element: <AddQueries />
             },
-            
+
         ]
     },
 ]);
