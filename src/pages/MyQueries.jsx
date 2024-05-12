@@ -68,7 +68,7 @@ const MyQueries = () => {
                                         <p>{query.query_title}</p>
                                         <div className="card-actions justify-end">
                                             <div className="flex items-center gap-2">
-                                                <Link to={`/viewDetails/${query._id}`} className="btn btn-ghost btn-xs text-orange-300 btn-outline">Details</Link>
+                                                <Link to={`/queryDetails/${query._id}`} className="btn btn-ghost btn-xs text-orange-300 btn-outline">Details</Link>
                                                 <Link to={`/updateQuery/${query._id}`} className="btn btn-ghost btn-xs text-green-500 btn-outline">Update</Link>
                                                 <button onClick={() => handleDelete(query._id)} className="btn btn-ghost btn-xs text-red-500 btn-outline">Delete</button>
                                             </div>

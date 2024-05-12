@@ -30,7 +30,7 @@ const NavBar = () => {
                     color: isActive ? "white" : "",
                 };
             }}>Home</NavLink></li>
-            <li><NavLink to='/queries' style={({ isActive }) => {
+            <li><NavLink to='/allQueries' style={({ isActive }) => {
                 return {
                     backgroundColor: isActive ? "orange" : "",
                     border: isActive ? "1px solid orange" : "",

@@ -8,6 +8,8 @@ import MyQueries from "../pages/MyQueries";
 import AddQueries from "../pages/AddQueries";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import UpdateQueries from "../pages/UpdateQueries";
+import QueryDetails from "../pages/QueryDetails";
+import AllQueries from "../pages/AllQueries";
 
 
 const router = createBrowserRouter([
@@ -39,9 +41,18 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddQueries /></PrivateRoute>
             },
             {
+                path: '/queryDetails/:id',
+                element: <PrivateRoute><QueryDetails/></PrivateRoute>,
+                loader: ({params})=> fetch(`http://localhost:5000/queries/${params.id}`)
+            },
+            {
                 path: '/updateQuery/:id',
                 element: <UpdateQueries/>,
                 loader: ({params})=> fetch(`http://localhost:5000/queries/${params.id}`)
+            }, 
+            {
+                path: '/allQueries',
+                element: <AllQueries/>
             }
 
         ]
