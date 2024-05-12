@@ -19,7 +19,7 @@ const AddQueries = () => {
         const userName = user?.displayName;
         const userImage = user?.photoURL;
         const currentDate = new Date(Date.now());
-        const  recommendationCount = 0;
+        const recommendationCount = 0;
 
         const newQuery = {product_name, brand_name, product_image, query_title, boycotting_reason, userEmail, userName, userImage, currentDate, recommendationCount};
         console.log(newQuery)

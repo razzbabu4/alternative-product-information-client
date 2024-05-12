@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { FcComments } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
-const SingleQueries = ({query
-}) => {
-    const {product_name, brand_name, product_image, query_title, boycotting_reason, userEmail, userName, userImage, currentDate, recommendationCount} = query;
+const SingleQueries = ({query}) => {
+    const {_id, product_name, brand_name, product_image, query_title, boycotting_reason, userEmail, userName, userImage, currentDate, recommendationCount} = query;
     return (
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
             <div className="flex space-x-4">
@@ -25,7 +25,7 @@ const SingleQueries = ({query
                     <p className='flex gap-2 items-center'><FcComments/> {recommendationCount}</p>
                 </div>
                 <div>
-                   <button className='btn btn-outline'>Recommendation</button>
+                   <Link to={`/queryDetails/${_id}`} className='btn btn-outline'>Recommendation</Link>
                 </div>
             </div>
         </div>
