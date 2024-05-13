@@ -25,8 +25,8 @@ const AllQueries = () => {
                 }
             </div>
             <div className="text-center">
-                <button onClick={handleShowAll} className="btn btn-primary my-4">
-                    {!queryLength ? 'ShowAll' : 'ShowLess'}
+                <button onClick={handleShowAll} className="btn btn-outline bg-[#023047] text-white my-4">
+                    {!queryLength ? 'Show All' : 'Show Less'}
                 </button>
             </div>
         </div>
