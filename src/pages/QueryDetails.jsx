@@ -20,8 +20,6 @@ const QueryDetails = () => {
             setRecommendations(data)
         })
     },[url, control])
-
-
     
     const handleRecommendation = e => {
         e.preventDefault();
@@ -56,7 +54,7 @@ const QueryDetails = () => {
                 if (data?.insertedId) {
                     Swal.fire({
                         title: 'Success',
-                        text: 'Queries added successfully',
+                        text: 'Successful',
                         icon: 'success',
                         confirmButtonText: 'OK'
                     })
@@ -67,12 +65,12 @@ const QueryDetails = () => {
 
     }
     return (
-        <div className="flex flex-col w-full p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
+        <div className="flex flex-col w-full p-6 space-y-6 overflow-hidden rounded-lg shadow-md">
             <div className="flex space-x-4">
-                <img alt="" src={userImage} className="object-cover w-12 h-12 rounded-full shadow bg-gray-500 dark:bg-gray-500" />
+                <img alt="" src={userImage} className="object-cover w-12 h-12 rounded-full shadow" />
                 <div className="flex flex-col space-y-1">
                     <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{userName}</a>
-                    <span className="text-xs text-gray-400 dark:text-gray-600">{currentDate}</span>
+                    <span className="text-xs">{currentDate}</span>
                 </div>
             </div>
             <div className='flex-grow space-y-2'>
@@ -80,7 +78,7 @@ const QueryDetails = () => {
                 <h2 className="mb-1 text-xl font-semibold">{product_name}</h2>
                 <small className='uppercase text-green-600 small'>{brand_name}</small>
                 <h4><span className='font-medium mr-2'>Query Title :</span>{query_title}</h4>
-                <p className="text-sm text-gray-400 dark:text-gray-600"><span className='mr-2'>Alternation Reason :</span>{boycotting_reason}</p>
+                <p className="text-sm"><span className='mr-2'>Alternation Reason :</span>{boycotting_reason}</p>
             </div>
             <div className="flex flex-wrap justify-between items-center">
                 <div className="space-x-2">
@@ -91,9 +89,8 @@ const QueryDetails = () => {
                 </div> */}
             </div>
             {/* Recommendation for this query */}
-                <h1 className='text-3xl font-medium text-center'>Recommendation</h1>
             {
-                 recommendations.map(comment => <div key={comment._id} className='flex justify-between items-center border p-6'>
+                recommendations.map(comment => <div key={comment._id} className='flex justify-between items-center border p-6'>
                     <div>
                         <div className="flex items-center gap-3">
                             <div className="avatar">
@@ -112,14 +109,12 @@ const QueryDetails = () => {
                         {comment.recommendationTitle}
                     </div>
                     <div>{comment.recommendedReason}</div>
-                        <div className="flex items-center gap-4">
-                            {/* <button onClick={()=>handsleDelete(comment._id)} className="btn btn-ghost btn-xs text-red-500 btn-outline">Delete</button> */}
-                        </div>
                 </div>)
             }
             {/* Recommendation form */}
             {user?.email !== userEmail &&
                 <div>
+                    <h1 className='text-3xl font-medium text-center'>Recommendation</h1>
                     <div className="max-w-5xl mx-auto p-4 rounded-md">
                         <form onSubmit={handleRecommendation} className="card-body">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
