@@ -52,7 +52,6 @@ const MyQueries = () => {
 
     return (
         <div className="my-6">
-            <h2>My queries : {myQuery.length}</h2>
             {
                 myQuery.length > 0 ?
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-6'>
@@ -85,7 +84,7 @@ const MyQueries = () => {
                     </div>
             }
 
-            <div className="px-8 py-2 border bg-gray-700 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+            <div className="px-8 py-2 shadow-lg">
                 <div className="flex flex-col gap-2 md:flex-row items-center mx-auto container justify-center md:justify-between py-2">
                     <div>
                         <span>You can add your queries here! </span>

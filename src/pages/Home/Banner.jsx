@@ -13,7 +13,7 @@ const Banner = () => {
                         <span>Plus free shipping! Use code:</span>
                         <span className="font-bold text-lg">MAMBA</span>
                     </div>
-                    <Link to='/queries' rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 border-gray-400 dark:border-gray-600">All Queries</Link>
+                    <Link to='/allQueries' rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 border-gray-400 dark:border-gray-600">All Queries</Link>
                 </div>
             </div>
         </div>

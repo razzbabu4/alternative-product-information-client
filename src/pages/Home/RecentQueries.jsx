@@ -1,9 +1,10 @@
-
+import AllQueries from "../AllQueries";
 
 const RecentQueries = () => {
     return (
-        <div>
-            <h1>Recent Queries</h1>
+        <div className="my-4 md:my-8">
+            <h1 className='text-3xl font-medium text-center my-6'>Recent Queries</h1>
+            <AllQueries/>
         </div>
     );
 };

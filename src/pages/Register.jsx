@@ -31,6 +31,7 @@ const Register = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage)
+                toast.warning(errorMessage)
             });
 
         form.name.value = "";
