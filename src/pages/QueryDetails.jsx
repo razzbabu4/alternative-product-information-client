@@ -1,6 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import { FcComments } from "react-icons/fc";
 import useAuth from '../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const QueryDetails = () => {
     const { user } = useAuth();
@@ -21,10 +22,32 @@ const QueryDetails = () => {
         const creatorName = userName;
         const recommenderEmail = user?.email;
         const recommenderName = user?.displayName;
+        // const recommenderCount = recommendationCount;
+        const currentTime = new Date().toLocaleString();
 
-        const newRecommendation = { recommendationTitle, recommendedProductName, recommendedProductImage, recommendedReason, queryId, queryTitle, productName, creatorEmail, creatorName, recommenderEmail, recommenderName };
+        const newRecommendation = { recommendationTitle, recommendedProductName, recommendedProductImage, recommendedReason, queryId, queryTitle, productName, creatorEmail, creatorName, recommenderEmail, recommenderName, currentTime };
 
         console.log(newRecommendation);
+
+        // send data to server
+        fetch(`http://localhost:5000/recommendation`, {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(newRecommendation)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data?.insertedId) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Queries added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                    // navigate('/myRecommendation')
+                }
+            })
 
     }
     return (
