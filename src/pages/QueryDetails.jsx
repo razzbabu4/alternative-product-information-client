@@ -12,7 +12,7 @@ const QueryDetails = () => {
     const [recommendations, setRecommendations] = useState([]);
     const [control, setControl] = useState(false);
 
-    const url = `http://localhost:5000/recommendation?queryId=${_id}`
+    const url = `https://alternative-product-information-server.vercel.app/recommendation?queryId=${_id}`
     useEffect(()=>{
         fetch(url)
         .then(res=> res.json())
@@ -43,7 +43,7 @@ const QueryDetails = () => {
         console.log(newRecommendation);
 
         // send data to server
-        fetch(`http://localhost:5000/recommendation`, {
+        fetch(`https://alternative-product-information-server.vercel.app/recommendation`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newRecommendation)

@@ -8,7 +8,7 @@ const SingleQueries = ({query}) => {
 
     const [recommendations, setRecommendations] = useState([]);
 
-    const url = `http://localhost:5000/recommendation?queryId=${_id}`
+    const url = `https://alternative-product-information-server.vercel.app/recommendation?queryId=${_id}`
     useEffect(()=>{
         fetch(url)
         .then(res=> res.json())
@@ -18,7 +18,7 @@ const SingleQueries = ({query}) => {
     },[url]);
 
     return (
-        <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md">
+        <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-lg border">
             <div className="flex space-x-4">
                 <img alt="" src={userImage} className="object-cover w-12 h-12 rounded-full shadow" />
                 <div className="flex flex-col space-y-1">
