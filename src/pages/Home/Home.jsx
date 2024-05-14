@@ -1,3 +1,5 @@
+import CustomerReview from "./CustomerReview";
+import Team from "./Team";
 import Banner from "./Banner";
 import RecentQueries from "./RecentQueries";
 import Slider from "./Slider/Slider";
@@ -9,6 +11,8 @@ const Home = () => {
             <Slider/>
             <Banner/>
             <RecentQueries/>
+            <CustomerReview/>
+            <Team/>
         </div>
     );
 };

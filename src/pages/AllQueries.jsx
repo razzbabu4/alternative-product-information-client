@@ -11,7 +11,7 @@ const AllQueries = () => {
     }
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/queries`)
+        fetch(`https://alternative-product-information-server.vercel.app/queries`)
         .then(res=>res.json())
         .then(data=> {
             setQueries(data)

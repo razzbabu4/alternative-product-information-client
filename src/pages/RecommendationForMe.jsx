@@ -5,7 +5,7 @@ const RecommendationForMe = () => {
     const { user } = useAuth();
     const [recommendations, setRecommendations] = useState([]);
 
-    const url = `http://localhost:5000/recommendForMe/${user?.email}`
+    const url = `https://alternative-product-information-server.vercel.app/recommendForMe/${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

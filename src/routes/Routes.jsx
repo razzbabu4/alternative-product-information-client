@@ -45,12 +45,12 @@ const router = createBrowserRouter([
             {
                 path: '/queryDetails/:id',
                 element: <PrivateRoute><QueryDetails/></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/queries/${params.id}`)
+                loader: ({params})=> fetch(`https://alternative-product-information-server.vercel.app/queries/${params.id}`)
             },
             {
                 path: '/updateQuery/:id',
                 element: <UpdateQueries/>,
-                loader: ({params})=> fetch(`http://localhost:5000/queries/${params.id}`)
+                loader: ({params})=> fetch(`https://alternative-product-information-server.vercel.app/queries/${params.id}`)
             }, 
             {
                 path: '/allQueries',
