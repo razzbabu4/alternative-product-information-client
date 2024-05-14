@@ -21,7 +21,7 @@ const MyQueries = () => {
         })
             .then(result => {
                 if (result.isConfirmed) {
-                    fetch(`https://alternative-product-information-server.vercel.app/deleteQuery/${id}`, {
+                    fetch(`http://localhost:5000/deleteQuery/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
@@ -40,9 +40,9 @@ const MyQueries = () => {
             })
     }
 
-    const url = `https://alternative-product-information-server.vercel.app/queries?userEmail=${user?.email}`
+    const url = `http://localhost:5000/myQueries/${user?.email}`
     useEffect(() => {
-        fetch(url)
+        fetch(url, {credentials: "include"})
             .then(res => res.json())
             .then(data => {
                 console.log(data);

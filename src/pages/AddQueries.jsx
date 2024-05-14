@@ -25,7 +25,7 @@ const AddQueries = () => {
         console.log(newQuery)
 
         // data send to server
-        fetch(`https://alternative-product-information-server.vercel.app/queries`, {
+        fetch(`http://localhost:5000/queries`, {
             method: 'POST',
             headers: {'content-type':'application/json'},
             body: JSON.stringify(newQuery)

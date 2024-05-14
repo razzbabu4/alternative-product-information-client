@@ -40,29 +40,31 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addQueries',
-                element: <PrivateRoute><AddQueries /></PrivateRoute>
+                element: <PrivateRoute>
+                    <AddQueries />
+                </PrivateRoute>
             },
             {
                 path: '/queryDetails/:id',
-                element: <PrivateRoute><QueryDetails/></PrivateRoute>,
-                loader: ({params})=> fetch(`https://alternative-product-information-server.vercel.app/queries/${params.id}`)
+                element: <QueryDetails />,
+                loader: ({ params }) => fetch(`http://localhost:5000/queries/${params.id}`)
             },
             {
                 path: '/updateQuery/:id',
-                element: <UpdateQueries/>,
-                loader: ({params})=> fetch(`https://alternative-product-information-server.vercel.app/queries/${params.id}`)
-            }, 
+                element: <UpdateQueries />,
+                loader: ({ params }) => fetch(`http://localhost:5000/queries/${params.id}`)
+            },
             {
                 path: '/allQueries',
-                element: <AllQueries/>
+                element: <AllQueries />
             },
             {
                 path: '/myRecommendation',
-                element: <MyRecommendation/>
+                element: <MyRecommendation />
             },
             {
                 path: '/recommendation',
-                element: <RecommendationForMe/>
+                element: <RecommendationForMe />
             },
 
         ]

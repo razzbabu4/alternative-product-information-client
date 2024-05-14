@@ -20,7 +20,7 @@ const MyRecommendation = () => {
         })
             .then(result => {
                 if (result.isConfirmed) {
-                    fetch(`https://alternative-product-information-server.vercel.app/deleteComment/${id}`, {
+                    fetch(`http://localhost:5000/deleteComment/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
@@ -38,7 +38,7 @@ const MyRecommendation = () => {
                 }
             })
     }
-    const url = `https://alternative-product-information-server.vercel.app/myRecommendation/${user?.email}`
+    const url = `http://localhost:5000/myRecommendation/${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

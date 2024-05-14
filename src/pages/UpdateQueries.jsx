@@ -25,7 +25,7 @@ const UpdateQueries = () => {
         console.log(updatedQuery)
 
         // data send to server
-        fetch(`https://alternative-product-information-server.vercel.app/queries/${_id}`, {
+        fetch(`http://localhost:5000/queries/${_id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updatedQuery)
