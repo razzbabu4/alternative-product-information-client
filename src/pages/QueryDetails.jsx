@@ -74,11 +74,11 @@ const QueryDetails = () => {
                 </div>
             </div>
             <div className='flex-grow space-y-2'>
-                <img src="https://source.unsplash.com/random/100x100/?5" alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
+                <img src={product_image} alt="" className=" w-full mb-4 h-60 md:h-96 lg:h-[600px] dark:bg-gray-500" />
                 <h2 className="mb-1 text-xl font-semibold">{product_name}</h2>
                 <small className='uppercase text-green-600 small'>{brand_name}</small>
                 <h4><span className='font-medium mr-2'>Query Title :</span>{query_title}</h4>
-                <p className="text-sm"><span className='mr-2'>Alternation Reason :</span>{boycotting_reason}</p>
+                <p className="text-sm"><span className='mr-2 font-medium'>Alternation Reason :</span>{boycotting_reason}</p>
             </div>
             <div className="flex flex-wrap justify-between items-center">
                 <div className="space-x-2">
@@ -112,7 +112,8 @@ const QueryDetails = () => {
                 </div>)
             }
             {/* Recommendation form */}
-            {user?.email !== userEmail &&
+            {
+            // user?.email !== userEmail &&
                 <div>
                     <h1 className='text-3xl font-medium text-center'>Recommendation</h1>
                     <div className="max-w-5xl mx-auto p-4 rounded-md">

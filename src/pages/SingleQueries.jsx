@@ -4,7 +4,7 @@ import { FcComments } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const SingleQueries = ({query}) => {
-    const {_id, product_name, brand_name, product_image, query_title, boycotting_reason, userEmail, userName, userImage, currentDate, recommendationCount} = query;
+    const {_id, product_name, brand_name, product_image, query_title, boycotting_reason, userName, userImage, currentDate, recommendationCount} = query;
 
     const [recommendations, setRecommendations] = useState([]);
 
@@ -27,7 +27,7 @@ const SingleQueries = ({query}) => {
                 </div>
             </div>
             <div className='flex-grow space-y-2'>
-                <img src="https://source.unsplash.com/random/100x100/?5" alt="" className="object-cover w-full mb-4 h-40 sm:h-60" />
+                <img src={product_image} alt="" className="object-cover w-full mb-4 h-40 sm:h-60" />
                 <h2 className="mb-1 text-xl font-semibold">{product_name}</h2>
                 <small className='uppercase text-green-600 small'>{brand_name}</small>
                 <h4><span className='font-medium mr-2'>Query Title :</span>{query_title}</h4>

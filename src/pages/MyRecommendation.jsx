@@ -57,6 +57,7 @@ const MyRecommendation = () => {
                             <th>Recommended Product</th>
                             <th>Recommendation Reason</th>
                             <th>Recommendation Title</th>
+                            <th>Query Product</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -82,6 +83,7 @@ const MyRecommendation = () => {
                                     {myComment.recommendedReason}
                                 </td>
                                 <td>{myComment.recommendationTitle}</td>
+                                <td>{myComment.productName}</td>
                                 <th>
                                     <div>
                                         <button onClick={() => handleDelete(myComment._id)} className="btn btn-ghost btn-xs text-red-500 btn-outline">Delete</button>

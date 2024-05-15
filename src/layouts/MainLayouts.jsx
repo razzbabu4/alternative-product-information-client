@@ -4,12 +4,13 @@ import Footer from "../pages/Shared/Footer";
 const MainLayouts = () => {
     return (
         <>
-            <div className="max-w-7xl mx-auto">
-                <NavBar></NavBar>
-                <Outlet></Outlet>
+            <div className="mx-4 lg:max-w-7xl lg:mx-auto">
+                    <NavBar></NavBar>
+                    <Outlet></Outlet>
             </div>
-            <Footer></Footer>
+                <Footer></Footer>
         </>
+
     );
 };
 

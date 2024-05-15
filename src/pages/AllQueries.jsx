@@ -9,11 +9,11 @@ const AllQueries = () => {
     const [columns, setColumns] = useState('');
 
     const handleLayoutChange = (col) => {
-        if (!col) {
+        if (col === 'default') {
             setColumns('')
         }
         else {
-            setColumns(`grid-cols-${col}`);
+            setColumns(col);
         }
     }
 
@@ -54,14 +54,15 @@ const AllQueries = () => {
                 </div>
                 <div className="dropdown dropdown-hover dropdown-bottom lg:dropdown-end">
                     <div tabIndex={0} role="button" className="btn m-1">Layout view</div>
-                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 flex ">
-                        <button className="btn mb-1 bg-slate-300" onClick={() => handleLayoutChange(1)}>One columns</button>
-                        <button className="btn mb-1 bg-slate-300" onClick={() => handleLayoutChange(2)}>Two columns</button>
-                        <button className="btn mb-1 bg-slate-300" onClick={() => handleLayoutChange(3)}>Three columns</button>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2">
+                        {/* <button className="btn mb-1 bg-slate-300" onClick={() => handleLayoutChange('grid-cols-1')}>One columns</button> */}
+                        <button className="btn mb-0.5 btn-outline bg-slate-300" onClick={() => handleLayoutChange('grid-cols-2')}>Two columns</button>
+                        <button className="btn mb-0.5 btn-outline bg-slate-300" onClick={() => handleLayoutChange('grid-cols-3')}>Three columns</button>
+                        <button className="btn mb-0.5 btn-outline bg-slate-300" onClick={() => handleLayoutChange('default')}>Default columns</button>
                     </ul>
                 </div>
             </div>
-            <div className={`grid grid-cols-1 ${columns || 'md:grid-cols-2 lg:grid-cols-3'}  gap-6`}>
+            <div className={`grid ${columns? columns : 'md:grid-cols-2 lg:grid-cols-3'}  gap-6`}>
                 {
                     queries.map(query => <SingleQueries key={query._id} query={query}></SingleQueries>)
                 }

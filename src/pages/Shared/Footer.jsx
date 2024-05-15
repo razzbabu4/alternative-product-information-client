@@ -2,7 +2,7 @@ import icon from '../../../public/icons8-project-management.gif'
 import { GrLinkedin } from "react-icons/gr";
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-[#8ECAE6] my-6">
+        <footer className="footer footer-center p-10 bg-[#8ECAE6] mt-10">
             <aside>
                 <img className="h-16 w-16" src={icon} alt="icon" />
                 <p className="font-bold text-black">

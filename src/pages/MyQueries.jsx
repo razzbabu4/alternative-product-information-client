@@ -58,7 +58,7 @@ const MyQueries = () => {
                         {
                             myQuery.map(query =>
                                 <div key={query._id} className="card w-full bg-base-100 shadow-xl">
-                                    <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                                    <figure><img className="h-60" src={query.product_image} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">
                                             {query.product_name}
