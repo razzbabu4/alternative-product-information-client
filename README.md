@@ -1,8 +1,12 @@
-# React + Vite
+# Swap Seek
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
+- High Quality: Products that match or exceed leading brands in performance and durability.
+- Affordable Prices: Competitive pricing that ensures value without compromising on quality.
+- Eco-Friendly: Sustainable products with environmentally conscious packaging.
+- Customer Support: Dedicated team providing reliable and friendly assistance.
+- Wide Selection: Extensive range of products catering to diverse needs and preferences.
 
-Currently, two official plugins are available:
+## live-link: https://alternative-product-info.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Assignment_ID: assignment_category_0009
