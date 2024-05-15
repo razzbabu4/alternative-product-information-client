@@ -65,7 +65,7 @@ const QueryDetails = () => {
 
     }
     return (
-        <div className="flex flex-col w-full p-6 space-y-6 overflow-hidden rounded-lg shadow-md">
+        <div className="flex flex-col w-full p-2 space-y-6 overflow-hidden rounded-lg shadow-md">
             <div className="flex space-x-4">
                 <img alt="" src={userImage} className="object-cover w-12 h-12 rounded-full shadow" />
                 <div className="flex flex-col space-y-1">
@@ -94,7 +94,7 @@ const QueryDetails = () => {
                     <div>
                         <div className="flex items-center gap-3">
                             <div className="avatar">
-                                <div className="mask mask-squircle w-12 h-12">
+                                <div className="mask mask-squircle w-20 h-20">
                                     <img src={comment.recommendedProductImage} alt="empty" />
                                 </div>
                             </div>
@@ -106,9 +106,9 @@ const QueryDetails = () => {
                         </div>
                     </div>
                     <div>
-                        {comment.recommendationTitle}
+                       Title : {comment.recommendationTitle}
                     </div>
-                    <div>{comment.recommendedReason}</div>
+                    <div>Reason : {comment.recommendedReason}</div>
                 </div>)
             }
             {/* Recommendation form */}

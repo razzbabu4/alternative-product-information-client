@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { MdOutlineLibraryAdd } from "react-icons/md";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import 'animate.css';
 
 const MyQueries = () => {
     const { user } = useAuth();
@@ -39,6 +40,7 @@ const MyQueries = () => {
                 }
             })
     }
+    
 
     const url = `https://alternative-product-information-server.vercel.app/myQueries/${user?.email}`
     useEffect(() => {
@@ -87,11 +89,11 @@ const MyQueries = () => {
             <div className="px-8 py-2 shadow-lg">
                 <div className="flex flex-col gap-2 md:flex-row items-center mx-auto container justify-center md:justify-between py-2">
                     <div>
-                        <span>You can add your queries here! </span>
+                        <span className="animate__shakeX animate_animated">You can add your queries here! </span>
                     </div>
                     <Link to='/addQueries' rel="noopener noreferrer" className="flex items-center gap-2">
                         <MdOutlineLibraryAdd></MdOutlineLibraryAdd>
-                        <span className="hover:underline focus-visible:underline">Add Queries</span>
+                        <span className="animate__animated animate__bounce hover:underline focus-visible:underline">Add Queries</span>
                     </Link>
                 </div>
             </div>

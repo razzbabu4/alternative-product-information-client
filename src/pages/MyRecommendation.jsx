@@ -68,7 +68,7 @@ const MyRecommendation = () => {
                                 <td>
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
+                                            <div className="mask mask-squircle w-20 h-20">
                                                 <img src={myComment.recommendedProductImage} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
