@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/queryDetails/:id',
-                element: <QueryDetails />,
+                element: <PrivateRoute><QueryDetails /></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://alternative-product-information-server.vercel.app/queries/${params.id}`)
             },
             {
