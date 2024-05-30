@@ -13,14 +13,14 @@ const QueryDetails = () => {
     const [control, setControl] = useState(false);
 
     const url = `https://alternative-product-information-server.vercel.app/recommendation?queryId=${_id}`
-    useEffect(()=>{
+    useEffect(() => {
         fetch(url)
-        .then(res=> res.json())
-        .then(data=> {
-            setRecommendations(data)
-        })
-    },[url, control])
-    
+            .then(res => res.json())
+            .then(data => {
+                setRecommendations(data)
+            })
+    }, [url, control])
+
     const handleRecommendation = e => {
         e.preventDefault();
         const form = e.target;
@@ -33,12 +33,13 @@ const QueryDetails = () => {
         const productName = product_name;
         const creatorEmail = userEmail;
         const creatorName = userName;
+        const recommenderImage = user?.photoURL;
         const recommenderEmail = user?.email;
         const recommenderName = user?.displayName;
         // const recommenderCount = recommendationCount;
         const currentTime = new Date().toLocaleString();
 
-        const newRecommendation = { recommendationTitle, recommendedProductName, recommendedProductImage, recommendedReason, queryId, queryTitle, productName, creatorEmail, creatorName, recommenderEmail, recommenderName, currentTime };
+        const newRecommendation = { recommendationTitle, recommendedProductName, recommendedProductImage, recommendedReason, queryId, queryTitle, productName, creatorEmail, creatorName, recommenderImage, recommenderEmail, recommenderName, currentTime };
 
         console.log(newRecommendation);
 
@@ -62,6 +63,11 @@ const QueryDetails = () => {
                     // navigate('/myRecommendation')
                 }
             })
+
+        form.recommendationTitle.value = "";
+        form.recommendedProductName.value = "";
+        form.recommendedProductImage.value = "";
+        form.recommendedReason.value = "";
 
     }
     return (
@@ -89,36 +95,53 @@ const QueryDetails = () => {
                 </div> */}
             </div>
             {/* Recommendation for this query */}
-            {
-                recommendations.map(comment => <div key={comment._id} className='flex justify-between items-center border p-6'>
-                    <div>
-                        <div className="flex items-center gap-3">
-                            <div className="avatar">
-                                <div className="mask mask-squircle w-20 h-20">
-                                    <img src={comment.recommendedProductImage} alt="empty" />
-                                </div>
-                            </div>
-                            <div>
-                                <div className="font-bold">{
-                                    comment.recommendedProductName}</div>
-                                <div className="text-sm opacity-50">{comment.currentTime}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                       Title : {comment.recommendationTitle}
-                    </div>
-                    <div>Reason : {comment.recommendedReason}</div>
-                </div>)
-            }
+            <div className="overflow-x-auto">
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>Recommended Product</th>
+                            <th>Recommendation Reason</th>
+                            <th>Recommendation Title</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* row 1 */}
+                        {
+                            recommendations.map(Comment => <tr key={Comment._id}>
+                                <td>
+                                    <div className="flex items-center gap-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-20 h-20">
+                                                <img src={Comment.recommendedProductImage} alt="Avatar Tailwind CSS Component" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="font-bold">{
+                                                Comment.recommendedProductName}</div>
+                                            <div className="text-sm opacity-50">{Comment.currentTime}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {Comment.recommendedReason}
+                                </td>
+                                <td>{Comment.recommendationTitle}</td>
+
+                            </tr>)
+                        }
+                    </tbody>
+
+                </table>
+            </div>
             {/* Recommendation form */}
             {
-            // user?.email !== userEmail &&
+                // user?.email !== userEmail &&
                 <div>
                     <h1 className='text-3xl font-medium text-center'>Recommendation</h1>
                     <div className="max-w-5xl mx-auto p-4 rounded-md">
                         <form onSubmit={handleRecommendation} className="card-body">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Title</span>

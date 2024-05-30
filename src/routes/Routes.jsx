@@ -12,6 +12,7 @@ import QueryDetails from "../pages/QueryDetails";
 import AllQueries from "../pages/AllQueries";
 import MyRecommendation from "../pages/MyRecommendation";
 import RecommendationForMe from "../pages/RecommendationForMe";
+import Notification from "../pages/Notification";
 
 
 const router = createBrowserRouter([
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
                 path: '/recommendation',
                 element: <RecommendationForMe />
             },
+            {
+                path: '/notification',
+                element: <Notification/>
+            }
 
         ]
     },

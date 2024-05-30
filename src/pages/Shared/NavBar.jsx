@@ -2,15 +2,33 @@ import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import icon from '../../../public/icons8-project-management.gif'
 import useAuth from "../../hooks/useAuth";
+import { FaBell } from "react-icons/fa";
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
     const [theme, setTheme] = useState('light');
+    const [recommendations, setRecommendations] = useState([]);
+
+    const handleNotification = () => {
+        setRecommendations(0)
+    }
+
+    const url = `https://alternative-product-information-server.vercel.app/recommendForMe/${user?.email}`
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setRecommendations(data)
+            })
+    }, [url]);
+
     useEffect(() => {
         localStorage.setItem('theme', theme);
         const savedTheme = localStorage.getItem('theme');
         document.querySelector('html').setAttribute('data-theme', savedTheme)
     }, [theme]);
+    
     const handleTheme = e => {
         if (e.target.checked) {
             setTheme('synthwave')
@@ -36,7 +54,7 @@ const NavBar = () => {
                     border: isActive ? "1px solid orange" : "",
                     borderRadius: isActive ? "0px" : "",
                     color: isActive ? "white" : "",
-                   
+
                 };
             }}>Queries</NavLink></li>
             {user && <li><NavLink to='/recommendation' style={({ isActive }) => {
@@ -63,7 +81,17 @@ const NavBar = () => {
                     color: isActive ? "white" : "",
                 };
             }}>My Recommendation</NavLink></li>}
-
+            {user && <li onClick={handleNotification}><NavLink to='/notification' style={({ isActive }) => {
+                return {
+                    backgroundColor: isActive ? "orange" : "",
+                    border: isActive ? "1px solid orange" : "",
+                    borderRadius: isActive ? "0px" : "",
+                    color: isActive ? "white" : "",
+                };
+            }}>
+                <FaBell className="text-lg"/>
+                <div className="badge badge-accent">+{recommendations.length> 0? `${recommendations.length}`: 0}</div>
+            </NavLink></li>}
 
         </>
     return (
@@ -99,7 +127,7 @@ const NavBar = () => {
                     <div>
                         <Link className="bg-red-500 py-2 px-4 text-white hidden rounded-none lg:flex" onClick={logOut}>Logout</Link>
                     </div>
-            
+
                     : <div>
                         <Link to='/login' className="px-4 py-2 bg-[#2c7b20] text-white hidden rounded-none lg:flex">Login</Link>
                     </div>

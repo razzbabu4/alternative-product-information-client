@@ -58,7 +58,7 @@ const MyRecommendation = () => {
                             <th>Recommendation Reason</th>
                             <th>Recommendation Title</th>
                             <th>Query Product</th>
-                            <th></th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
