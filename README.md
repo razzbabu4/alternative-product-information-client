@@ -9,4 +9,3 @@
 
 ## live-link: https://alternative-product-info.web.app
 
-- Assignment_ID: assignment_category_0009
