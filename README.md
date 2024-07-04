@@ -7,5 +7,6 @@
 - Customer Support: Dedicated team providing reliable and friendly assistance.
 - Wide Selection: Extensive range of products catering to diverse needs and preferences.
 
+### server-site: https://github.com/razzbabu4/alternative-product-information-server
 ## live-link: https://alternative-product-info.web.app
 
