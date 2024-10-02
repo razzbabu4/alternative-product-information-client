@@ -23,28 +23,30 @@ const Notification = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            recommendations.map(myComment => <Link to='/recommendation' key={myComment._id}>
-                                <td className="flex gap-6 items-center">
-                                    <div>
-                                        <div className="flex items-center gap-3">
-                                            <div className="avatar online">
-                                                <div className="mask mask-circle w-10 h-10">
-                                                    <img src={myComment.recommenderImage} alt="Recommender" />
+                            recommendations.map(myComment => <tr key={myComment._id}>
+                                <td>
+                                    <Link to='/recommendation' className="flex gap-6 items-center">
+                                        <div>
+                                            <div className="flex items-center gap-3">
+                                                <div className="avatar online">
+                                                    <div className="mask mask-circle w-10 h-10">
+                                                        <img src={myComment.recommenderImage} alt="Recommender" />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div className="font-bold">{
+                                                        myComment.recommenderName}</div>
+                                                    <div className="text-sm opacity-50">{myComment.currentTime}</div>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <div className="font-bold">{
-                                                    myComment.recommenderName}</div>
-                                                <div className="text-sm opacity-50">{myComment.currentTime}</div>
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        Recommend <span className="font-medium">{myComment.recommendedProductName}</span> for your product <span className="font-medium">{myComment.productName}</span>
-                                    </div>
+                                        <div>
+                                            Recommend <span className="font-medium">{myComment.recommendedProductName}</span> for your product <span className="font-medium">{myComment.productName}</span>
+                                        </div>
+                                    </Link>
                                 </td>
 
-                            </Link>)
+                            </tr>)
                         }
                     </tbody>
 
