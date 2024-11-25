@@ -48,8 +48,8 @@ const MyRecommendation = () => {
             })
     }, [url, control]);
     return (
-        <div className="max-w-7xl mx-auto">
-            <div className="overflow-x-auto">
+        <div className="max-w-7xl mx-auto min-h-[calc(100vh-442px)]">
+            <div className="overflow-auto">
                 <table className="table">
                     {/* head */}
                     <thead>

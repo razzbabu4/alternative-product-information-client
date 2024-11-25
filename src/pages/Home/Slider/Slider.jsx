@@ -12,7 +12,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Slider = () => {
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div className='max-w-7xl mx-auto min-h-[65vh]'>
       <Swiper
         centeredSlides={true}
         autoplay={{

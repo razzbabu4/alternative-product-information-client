@@ -40,11 +40,10 @@ const MyQueries = () => {
                 }
             })
     }
-    
 
     const url = `https://alternative-product-information-server.vercel.app/myQueries/${user?.email}`
     useEffect(() => {
-        fetch(url, {credentials: "include"})
+        fetch(url, { credentials: "include" })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -53,7 +52,7 @@ const MyQueries = () => {
     }, [url, control]);
 
     return (
-        <div className="my-6">
+        <div className="my-6 min-h-[calc(100vh-442px)]">
             {
                 myQuery.length > 0 ?
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-6'>

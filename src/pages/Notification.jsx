@@ -17,8 +17,8 @@ const Notification = () => {
             })
     }, [url]);
     return (
-        <div>
-            <div className="overflow-x-auto">
+        <div className="min-h-[calc(100vh-442px)]">
+            <div className="overflow-auto">
                 <table className="table">
                     <tbody>
                         {/* row 1 */}

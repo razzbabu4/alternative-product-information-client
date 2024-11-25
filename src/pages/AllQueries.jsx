@@ -39,7 +39,7 @@ const AllQueries = () => {
     }, [searchAllProduct])
 
     return (
-        <div>
+        <div className="min-h-[calc(100vh-442px)]">
             <div className="flex flex-col gap-4 items-center justify-between my-6 lg:flex-row">
                 <div className="flex gap-2">
                     <label className="input input-bordered flex items-center gap-2">
@@ -62,7 +62,7 @@ const AllQueries = () => {
                     </ul>
                 </div>
             </div>
-            <div className={`grid ${columns? columns : 'md:grid-cols-2 lg:grid-cols-3'}  gap-6`}>
+            <div className={`grid ${columns ? columns : 'md:grid-cols-2 lg:grid-cols-3'}  gap-6`}>
                 {
                     queries.map(query => <SingleQueries key={query._id} query={query}></SingleQueries>)
                 }
